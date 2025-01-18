@@ -5,3 +5,7 @@ __pycache__/
 # If inside virtual environments
 .venv/**/__pycache__/
 .venv/
+
+# Ignore macOS system files
+.DS_Store
+
