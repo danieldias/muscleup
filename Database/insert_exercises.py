@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from setup_database import Muscles, Exercise, ExerciseMuscleMapping
 
 def connect_to_database():
-    engine = create_engine('sqlite:///fitness.db')
+    engine = create_engine('sqlite:///Database/fitness.db')
     Session = sessionmaker(bind=engine)
     return Session()
 
@@ -13,7 +13,7 @@ def insert_exercises(session):
         "Leg Press", "Ab Machine", "Pull Up", "Stiff", "Hip Thrust"
     ]
     existing_exercises = session.query(Exercise).filter(Exercise.name.in_(exercises)).all()
-    existing_names = {Exercise.name for exercise in existing_exercises}
+    existing_names = {exercise.name for exercise in existing_exercises}
 
     new_exercises = [Exercise(name=name) for name in exercises if name not in existing_names]
     if new_exercises:

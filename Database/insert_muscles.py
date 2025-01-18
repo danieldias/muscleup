@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from setup_database import Muscles, Exercise, ExerciseMuscleMapping
 
 def connect_to_database():
-    engine = create_engine('sqlite:///fitness.db')
+    engine = create_engine('sqlite:///Database/fitness.db')
     Session = sessionmaker(bind=engine)
     return Session()
 

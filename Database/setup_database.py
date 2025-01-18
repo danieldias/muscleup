@@ -34,7 +34,7 @@ class Muscles(Base):
 
 #Create the SQLite database and establish a connection
 def setup_database():
-    engine = create_engine('sqlite:///fitness.db') #databsed named exercises.db
+    engine = create_engine('sqlite:///Database/fitness.db') #databsed named exercises.db
     Base.metadata.create_all(engine) #Create the tables in the schema
     print("Database setup complete.")
     return engine
